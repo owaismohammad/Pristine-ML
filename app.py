@@ -1,7 +1,8 @@
 from flask import Flask,render_template,request,flash, request, redirect, url_for,jsonify
 from werkzeug.utils import secure_filename
 import os
-
+import numpy as np
+import cv2
 from models import Model
 
 UPLOAD_FOLDER = 'static'
@@ -26,10 +27,9 @@ def upload():
     if file.filename == '':
         return jsonify({"error":"No selected file"})
     if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file_path=os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(file_path)
-        prediction= process_data(file_path)
+        file_bytes = np.frombuffer(file.read(), np.uint8)
+        image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+        prediction= process_data(image)
         return {"success":"successfully recieved", "prediction":prediction}
     elif file and not allowed_file(file.filename):
         return jsonify({"error":"Incorrect Format"})
