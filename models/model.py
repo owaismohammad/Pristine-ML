@@ -7,7 +7,7 @@ class Model():
 
     def image_to_feature_vector(self,image, size=(128, 128)):
       # Load the image using OpenCV
-      image = cv2.imread(image)
+      # image = cv2.imread(image)
       # Resize the image to the specified size
       image = cv2.resize(image, size)
 
