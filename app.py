@@ -44,14 +44,14 @@ def process_test(data):
     new_age=data["age"]+2
     return jsonify({"name":new_name,"age":new_age}) 
 
-def process_data(file_path):
-    model.image_to_feature_vector(image_path=file_path)
+def process_data(image):
+    model.image_to_feature_vector(image)
     pred=model.image_prediction(image=model.image)
     return pred
 
 if __name__ == '__main__':
     
-  app.run(host="0.0.0.0", port=8080, debug=True)
+  app.run(host="0.0.0.0", port=8080, debug=False)
 
 
     #In the above you can add ip address with the help of host='<ip_address>', port=8080
