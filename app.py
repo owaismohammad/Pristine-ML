@@ -45,7 +45,7 @@ def process_test(data):
     return jsonify({"name":new_name,"age":new_age}) 
 
 def process_data(image):
-    model.image_to_feature_vector(image)
+    model.image_to_feature_vector(image_get=image)
     pred=model.image_prediction(image=model.image)
     return pred
 
