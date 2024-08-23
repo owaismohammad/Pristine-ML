@@ -51,7 +51,7 @@ def process_data(file_path):
 
 if __name__ == '__main__':
     
-  app.run(host="192.168.63.231", port=8080, debug=True)
+  app.run(host="0.0.0.0", port=8080, debug=True)
 
 
     #In the above you can add ip address with the help of host='<ip_address>', port=8080
