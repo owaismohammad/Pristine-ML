@@ -3,7 +3,7 @@ import cv2
 
 class Model():
     def __init__(self):
-        self.model=tf.keras.models.load_model(r'water_pred_02.h5')
+        self.model=tf.keras.models.load_model(r'water_pred_improved_added_cmnts.h5')
 
     def image_to_feature_vector(self,image_get, size=(128, 128)):
       # Load the image using OpenCV
