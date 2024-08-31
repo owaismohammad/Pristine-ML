@@ -10,8 +10,9 @@ class Model():
       # image = cv2.imread(image)
       # Resize the image to the specified size
       image = cv2.resize(image_get, size)
-
+        
       self.image=image.reshape((1,128,128,3))
+      self.image=self.image/255.0
 
     def image_prediction(self,image):
       pred=self.model.predict(image)
