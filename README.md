@@ -1,6 +1,6 @@
 # 🌊 Pristine-ML
 
-![Pristine Logo](https://via.placeholder.com/150)  
+
 *A Machine Learning-Based Solution for Visual Assessment of Water Purity*
 
 ## 📋 Table of Contents
