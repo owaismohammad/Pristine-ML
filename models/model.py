@@ -9,8 +9,8 @@ class Model():
       # Load the image using OpenCV
       # image = cv2.imread(image)
       # Resize the image to the specified size
-      image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  
-      image = cv2.resize(image_get, size)
+      image_rgb = cv2.cvtColor(image_get, cv2.COLOR_BGR2RGB)  
+      image = cv2.resize(image_rgb, size)
         
       self.image=image.reshape((1,64,64,3))
       self.image=self.image/255.0
